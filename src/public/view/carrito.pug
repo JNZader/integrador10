@@ -1,0 +1,30 @@
+extends layout
+block scripts
+  script(src="/js/carrito.js")
+block content
+  .carrito-container
+    h2 Carrito de Compras
+    a.volver(href="/") Volver a la página principal
+    if carrito.length > 0
+      each item in carrito
+        .item-carrito
+          img(src=item.image, alt=item.title)
+          .info
+            h5= item.title
+            p= item.description
+            p Cantidad: #{item.cantidad}
+            if item.price !== undefined
+              p Precio: $#{item.price.toFixed(2)}
+            else
+              p Precio: Precio no disponible
+            if item.cantidad !== undefined && item.price !== undefined
+              p Subtotal: $#{(item.cantidad * item.price).toFixed(2)}
+            else
+              p Subtotal: Subtotal no disponible
+          .acciones
+            button.btn-sumar(data-id=item.id) +
+            button.btn-restar(data-id=item.id) -
+            button.btn-eliminar(data-id=item.id) Eliminar
+      button.btn-confirmar Confirmar Compra
+    else
+      p No hay productos en el carrito.

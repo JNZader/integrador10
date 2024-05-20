@@ -1,0 +1,19 @@
+extends layout
+block scripts
+  script(src="/js/compras.js")
+block content
+  .carrito-container
+    h2 Mis Compras
+    each compra in compras
+      .compra
+        h3 Compra #{compra.id}
+        each producto in compra.carrito
+          .item-carrito
+            img(src=producto.image, alt=producto.title)
+            .info
+              h5= producto.title
+              p= producto.description
+              p Categoria: #{producto.category}
+              p Precio: $#{producto.price.toFixed(2)}
+              p Cantidad: #{producto.cantidad}
+    a.volver(href="/") Volver a la página principal

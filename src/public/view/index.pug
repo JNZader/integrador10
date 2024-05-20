@@ -1,0 +1,31 @@
+extends layout
+block scripts
+  script(src="/js/script.js")
+block content
+  .grilla
+    each producto in productos
+      .producto
+        h5= producto.title
+        .rating
+          span #{producto.rating.rate}
+          - for (var i = 1; i <= 5; i++)
+            if i <= Math.round(producto.rating.rate)
+              i.fas.fa-star
+            else
+              i.far.fa-star
+          span (#{producto.rating.count})
+        .description= producto.description
+        .image-container
+          if producto.descuento
+            .oferta Oferta
+          img(src= producto.image, width="200px")
+        if producto.descuento
+          .precio
+            .precio-original $#{producto.price.toFixed(2)}
+            .descuento #{producto.descuento}% off
+            .precio-final $#{(producto.price - producto.price * producto.descuento / 100).toFixed(2)}
+            button.btn-agregar(id=producto.id,data-title=producto.title,data-price=(producto.price - producto.price * producto.descuento / 100),data-description=producto.description,data-category=producto.category,data-image=producto.image) Agregar
+        else
+          .precio
+            .precio-final $#{producto.price.toFixed(2)}
+          button.btn-agregar(id=producto.id,data-title=producto.title,data-price=producto.price,data-description=producto.description,data-category=producto.category,data-image=producto.image) Agregar

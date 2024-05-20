@@ -1,0 +1,22 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title FakeLibre
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    link(rel="stylesheet" href="../css/style.css")
+    block scripts
+  body
+    header
+      img(src="https://cdn.7tv.app/emote/661677c0e55c4c75aafbf7d9/2x.webp")
+      .logo FakeLibre
+      a(href="/compras",class="compras-realizadas") 
+        | Compras realizadas
+      a(href="/carrito")
+        .carrito 
+          i.fas.fa-shopping-cart
+          span#carrito-cantidad 0
+    main.main
+      block content  

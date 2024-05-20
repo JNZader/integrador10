@@ -1,0 +1,249 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffce00;
+}
+
+header .logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+header .carrito {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+header .carrito .fas.fa-shopping-cart {
+  font-size: 24px;
+}
+
+header .carrito span {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.main .grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 1200px) {
+  .main .grilla {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.main .producto {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, max-height 0.5s ease;
+  min-height: 400px;
+}
+
+.main .producto .image-container {
+  position: relative;
+}
+
+.main .producto img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main .btn-agregar {
+  background-color: #ffce00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.main .producto .description {
+  max-height: 50px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out 0.5s;
+}
+
+.main .producto:hover .description {
+  max-height: 1000px;
+  transition-delay: 0.5s;
+}
+
+.main .producto:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.main .oferta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.main .precio {
+  margin-top: 10px;
+}
+
+.main .precio-original {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.main .precio-final {
+  font-size: 20px;
+  color: green;
+}
+
+.main .rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.main .rating i {
+  color: gold;
+  margin-right: 2px;
+}
+
+.main .rating span {
+  margin-left: 5px;
+  color: #555;
+}
+
+.main .producto h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.carrito-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carrito-container .compra {
+  border: 2px solid #ffce00;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-container .compra h3 {
+  border-bottom: 2px solid #ffce00;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.carrito-container .item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.carrito-container .item-carrito img {
+  max-width: 100px;
+  height: auto;
+}
+
+.carrito-container .item-carrito .info {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.carrito-container .item-carrito .info h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.carrito-container .item-carrito .info p {
+  margin: 2px 0;
+  color: #555;
+}
+
+.carrito-container .item-carrito .acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.carrito-container .btn-confirmar {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.carrito-container .volver {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.carrito-container .volver:hover {
+  background-color: #e0e0e0;
+}
+
+.carrito-container.d-flex {
+  min-height: 400px;
+}
+
+.compras-realizadas {
+  margin-left: 500px; 
+}
