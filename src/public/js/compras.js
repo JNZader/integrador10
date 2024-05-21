@@ -1,6 +1,19 @@
+function getCarrito() {
+  return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+function actualizarCarritoCantidad() {
+  let carrito = getCarrito();
+  const cantidadTotal = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+  document.getElementById('carrito-cantidad').innerText = cantidadTotal;
+}
+
 // Espera a que el contenido del DOM se cargue completamente
 document.addEventListener('DOMContentLoaded', function() {
   // Obtiene el contenedor de las compras desde el DOM
+
+  actualizarCarritoCantidad();
+  
   const comprasContainer = document.getElementById('compras-container');
 
   // Realiza una solicitud fetch para obtener los datos de las compras
