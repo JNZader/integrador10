@@ -1,6 +1,8 @@
 extends layout
+
 block scripts
   script(src="/js/compras.js")
+
 block content
   .carrito-container
     h2 Mis Compras
@@ -14,6 +16,10 @@ block content
               h5= producto.title
               p= producto.description
               p Categoria: #{producto.category}
-              p Precio: $#{producto.price.toFixed(2)}
+              p Precio unitario: $#{producto.price.toFixed(2)}
               p Cantidad: #{producto.cantidad}
+              p Subtotal: $#{(producto.price * producto.cantidad).toFixed(2)}
+        - const totalCompra = compra.carrito.reduce((total, producto) => total + producto.price * producto.cantidad, 0)
+        .total-compra
+          h4 Total de la compra: $#{totalCompra.toFixed(2)}
     a.volver(href="/") Volver a la página principal

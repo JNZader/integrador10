@@ -1,9 +1,11 @@
+/* Estilos generales para el cuerpo del documento */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
+/* Estilos para el encabezado */
 header {
   display: flex;
   justify-content: space-between;
@@ -12,6 +14,7 @@ header {
   background-color: #ffce00;
 }
 
+/* Estilos para el logo en el encabezado */
 header .logo {
   font-size: 30px;
   font-weight: bold;
@@ -19,16 +22,19 @@ header .logo {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilos para el icono del carrito en el encabezado */
 header .carrito {
   position: relative;
   font-size: 24px;
   cursor: pointer;
 }
 
+/* Estilos para el icono del carrito de compras */
 header .carrito .fas.fa-shopping-cart {
   font-size: 24px;
 }
 
+/* Estilos para el contador de ítems en el carrito */
 header .carrito span {
   position: absolute;
   top: -10px;
@@ -45,6 +51,7 @@ header .carrito span {
   height: 20px;
 }
 
+/* Estilos para la grilla de productos */
 .main .grilla {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -52,12 +59,14 @@ header .carrito span {
   padding: 20px;
 }
 
+/* Ajuste de la grilla de productos para pantallas anchas */
 @media (min-width: 1200px) {
   .main .grilla {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
+/* Estilos para cada producto en la grilla */
 .main .producto {
   border: 1px solid #ddd;
   padding: 10px;
@@ -69,15 +78,18 @@ header .carrito span {
   min-height: 400px;
 }
 
+/* Contenedor de la imagen del producto */
 .main .producto .image-container {
   position: relative;
 }
 
+/* Estilos para la imagen del producto */
 .main .producto img {
   max-width: 100%;
   height: auto;
 }
 
+/* Estilos para el botón de agregar al carrito */
 .main .btn-agregar {
   background-color: #ffce00;
   border: none;
@@ -87,12 +99,14 @@ header .carrito span {
   font-size: 16px;
 }
 
+/* Descripción del producto (oculta parcialmente) */
 .main .producto .description {
   max-height: 50px;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out 0.5s;
 }
 
+/* Efecto al pasar el ratón sobre un producto */
 .main .producto:hover .description {
   max-height: 1000px;
   transition-delay: 0.5s;
@@ -103,6 +117,7 @@ header .carrito span {
   z-index: 1;
 }
 
+/* Estilos para la etiqueta de oferta */
 .main .oferta {
   position: absolute;
   bottom: 0;
@@ -116,20 +131,24 @@ header .carrito span {
   z-index: 1;
 }
 
+/* Estilos para el precio del producto */
 .main .precio {
   margin-top: 10px;
 }
 
+/* Estilos para el precio original */
 .main .precio-original {
   text-decoration: line-through;
   color: #888;
 }
 
+/* Estilos para el precio final con descuento */
 .main .precio-final {
   font-size: 20px;
   color: green;
 }
 
+/* Contenedor de la calificación del producto */
 .main .rating {
   display: flex;
   align-items: center;
@@ -137,16 +156,19 @@ header .carrito span {
   margin-bottom: 10px;
 }
 
+/* Estilos para las estrellas de calificación */
 .main .rating i {
   color: gold;
   margin-right: 2px;
 }
 
+/* Estilos para el texto de calificación */
 .main .rating span {
   margin-left: 5px;
   color: #555;
 }
 
+/* Título del producto */
 .main .producto h5 {
   font-size: 18px;
   font-weight: bold;
@@ -156,12 +178,14 @@ header .carrito span {
   letter-spacing: 1px;
 }
 
+/* Contenedor del carrito de compras */
 .carrito-container {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* Estilos para cada compra en el carrito */
 .carrito-container .compra {
   border: 2px solid #ffce00;
   border-radius: 10px;
@@ -171,6 +195,7 @@ header .carrito span {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Título de cada compra en el carrito */
 .carrito-container .compra h3 {
   border-bottom: 2px solid #ffce00;
   padding-bottom: 10px;
@@ -178,6 +203,7 @@ header .carrito span {
   font-size: 24px;
 }
 
+/* Contenedor de cada ítem en el carrito */
 .carrito-container .item-carrito {
   display: flex;
   justify-content: space-between;
@@ -187,16 +213,19 @@ header .carrito span {
   margin-bottom: 10px;
 }
 
+/* Imagen de cada ítem en el carrito */
 .carrito-container .item-carrito img {
   max-width: 100px;
   height: auto;
 }
 
+/* Información de cada ítem en el carrito */
 .carrito-container .item-carrito .info {
   flex-grow: 1;
   margin-left: 10px;
 }
 
+/* Título de cada ítem en el carrito */
 .carrito-container .item-carrito .info h5 {
   font-size: 18px;
   font-weight: bold;
@@ -204,16 +233,19 @@ header .carrito span {
   margin-bottom: 5px;
 }
 
+/* Descripción de cada ítem en el carrito */
 .carrito-container .item-carrito .info p {
   margin: 2px 0;
   color: #555;
 }
 
+/* Contenedor para las acciones de cada ítem en el carrito */
 .carrito-container .item-carrito .acciones {
   display: flex;
   gap: 10px;
 }
 
+/* Botón para confirmar la compra */
 .carrito-container .btn-confirmar {
   background-color: green;
   color: white;
@@ -224,6 +256,7 @@ header .carrito span {
   margin-top: 20px;
 }
 
+/* Enlace para volver a la página anterior */
 .carrito-container .volver {
   display: inline-block;
   margin-top: 20px;
@@ -236,14 +269,17 @@ header .carrito span {
   transition: background-color 0.3s ease;
 }
 
+/* Efecto hover para el enlace de volver */
 .carrito-container .volver:hover {
   background-color: #e0e0e0;
 }
 
+/* Contenedor del carrito con diseño flexible */
 .carrito-container.d-flex {
   min-height: 400px;
 }
 
+/* Estilos para la sección de compras realizadas */
 .compras-realizadas {
   margin-left: 500px; 
 }

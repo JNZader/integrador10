@@ -1,10 +1,11 @@
 extends layout
+
 block scripts
   script(src="/js/carrito.js")
+
 block content
   .carrito-container
     h2 Carrito de Compras
-    a.volver(href="/") Volver a la página principal
     if carrito.length > 0
       each item in carrito
         .item-carrito
@@ -25,6 +26,10 @@ block content
             button.btn-sumar(data-id=item.id) +
             button.btn-restar(data-id=item.id) -
             button.btn-eliminar(data-id=item.id) Eliminar
+      .total-compra
+        h4 Total de la compra: $0.00
+      a.volver(href="/") Volver a la página principal
       button.btn-confirmar Confirmar Compra
     else
       p No hay productos en el carrito.
+      a.volver(href="/") Volver a la página principal
