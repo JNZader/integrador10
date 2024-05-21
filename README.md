@@ -10,7 +10,7 @@ La aplicación consume un listado de productos provisto por la API FakeStoreAPI.
 
 * **Visualización de Productos**: Muestra productos en una grilla de 4 columnas. La descripción completa se muestra al pasar el mouse por encima.
 * **Productos en Oferta**: Los productos en oferta se resaltan con una banda "de oferta" y muestran el precio original, el porcentaje de descuento y el precio final. La información de las ofertas se obtiene del archivo `descuentos.json`.
-* **Traducción al Español**: Títulos y descripciones de productos se muestran en español utilizando el endpoint de traducción con el paquete `node-google-translate-skidz`.
+* **Traducción al Español**: Títulos y descripciones de productos se muestran en español utilizando el paquete `node-google-translate-skidz`.
 * **Carrito de Compras**: Los usuarios pueden agregar productos al carrito de compra. La página de gestión del carrito permite eliminar y modificar cantidades, y finalizar la compra.
 * **Compras Realizadas**: Los usuarios pueden consultar las compras realizadas. En cada compra se muestran los productos con su título, descripción, precio unitario, cantidad, subtotal y total de compra.
 
