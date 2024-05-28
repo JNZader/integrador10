@@ -97,6 +97,14 @@ header .carrito span {
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100px;
+}
+
+.main .btn-agregar.highlight {
+  background-color: #4caf50; /* Cambia el color de fondo al verde */
+  transform: scale(1.1); /* Aumenta un poco el tamaño */
+  color: white; /* Cambia el color del texto */
 }
 
 /* Descripción del producto (oculta parcialmente) */

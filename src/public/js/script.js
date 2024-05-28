@@ -1,8 +1,7 @@
 // Espera a que el contenido del DOM se cargue completamente
 document.addEventListener("DOMContentLoaded", async () => {
-  // Obtiene el carrito almacenado en el almacenamiento local y lo asigna a la variable carrito
+  // Inicializa el carrito y actualiza la cantidad de productos en la interfaz de usuario
   let carrito = await getCarrito();
-  // Actualiza la cantidad de productos en el carrito en la interfaz de usuario
   actualizarCarritoCantidad();
 
   // Obtiene todos los botones de "Agregar al carrito" y les asigna un listener de eventos
@@ -25,6 +24,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Actualiza la información del carrito después de agregar el producto
       carrito = await getCarrito();
       actualizarCarritoCantidad(); // Actualiza la cantidad de productos en el carrito en la interfaz de usuario
+
+      // Cambia el texto del botón temporalmente
+      mostrarConfirmacion(btn);
     });
   });
 });
@@ -54,4 +56,16 @@ function actualizarCarritoCantidad() {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const cantidadTotal = carrito.reduce((total, producto) => total + producto.cantidad, 0);
   document.getElementById('carrito-cantidad').innerText = cantidadTotal;
+}
+
+// Función para mostrar +1 en el botón y resaltar
+function mostrarConfirmacion(button) {
+  const originalText = button.innerText;
+  button.innerText = "+1";
+  button.classList.add("highlight");
+
+  setTimeout(() => {
+    button.innerText = originalText;
+    button.classList.remove("highlight");
+  }, 1000); // 1 segundo
 }
